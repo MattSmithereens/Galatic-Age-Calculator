@@ -16,9 +16,9 @@ This program does 3 related, but separate things:
 | **Program takes in an age in years and converts that to seconds (1 year = 3.154e+7 seconds)**|  "1" | "31557600" |
 | **Program converts a pair of ages and determines how many seconds separate them**|  "1", "2" | "31557600" |
 | **Program Calculates a Terran age in Mercurian years**|  "1" | ".24"|
-| **Program Calculates a Terran age in Venusian years**|  "1" | ".24"|
-| **Program Calculates a Terran age in Martian years**|  "1" | ".24"|
-| **Program Calculates a Terran age in Jovian years**|  "1" | ".24"|
+| **Program Calculates a Terran age in Venusian years**|  "1" | ".62"|
+| **Program Calculates a Terran age in Martian years**|  "1" | "1.88"|
+| **Program Calculates a Terran age in Jovian years**|  "1" | "11.86"|
 
 
 ## Setup on OSX
