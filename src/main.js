@@ -1,27 +1,76 @@
-export class AgeCalculator { // can't scope variables to class, so fix this shit
-  let nowDate = Date();
-  let nowString = nowDate.toString();
-  let nowArray = nowString.split(" "); //split date string into elements
-  let nowMonth = nowArray[1];
-  let nowDay = parseInt(((nowArray[2])-1)*86400);
-  let nowYear = nowArray[3];
-  let nowTime = nowArray[4];
-  let splitTime = nowTime.split(":");
-  let nowHours = parseInt((splitTime[0])*3600);
-  let nowMinutes = parseInt((splitTime[1])*60);
-  let nowSeconds = parseInt(splitTime[2]);
-  let totalSeconds = 0;
-  let yearSpan = [];
-// works in console.  inplement properly and test
+export class AgeCalculator {
+  constructor() {
+    this.nowDate = Date().toString();
+    this.birthDate = new Date("--- Oct 23 1975 10:42:30"); // bring in via form.  Not building a front end, so it's hardcoded for now
 
-    function countYears(birthYear, nowYear) {
-      for (var i = birthYear+1; i <= nowYear-1; i += 1) {
-        leapYear(i);
+    this.nowArray = nowDate.split(" "); //date inport format: "Fri Aug 03 2018 14:18:20 GMT-0700 (Pacific Daylight Time)"
+    this.nowMonth = this.nowArray[1];
+    this.nowDays = parseInt(((this.nowArray[2])-1)*86400);
+    this.nowYear = this.nowArray[3];
+    this.nowTime = this.nowArray[4];
+    this.splitTime = nowTime.split(":");
+    this.nowHours = parseInt((this.splitTime[0])*3600);
+    this.nowMinutes = parseInt((this.splitTime[1])*60);
+    this.nowSeconds = parseInt(this.splitTime[2]);
+    // all good above
+
+    this.birthArray = this.nowArray.split(" ");
+    this.birthMonth = this.birthArray[1];
+    this.birthDays = parseInt(((this.birthArray[2])-1)*86400);
+    this.birthYear = this.birthArray[3];
+    this.birthTime = this.birthArray[4];
+    this.splitBirthTime = nowTime.split(":");
+    this.birthHours = parseInt((this.splitBirthTime[0])*3600);
+    this.birthMinutes = parseInt((this.splitBirthTime[1])*60);
+    this.birthSeconds = parseInt(this.splitBirthTime[2]);
+    this.totalSeconds = 0;
+    this.yearSpan = [];
+  }
+
+  function countYears() {
+    for(let i = (parseInt(this.birthYear))+1; i < parseInt(this.nowYear); i += 1) {
+        this.yearSpan.push(i);
       }
     }
 
+  function monthsThisYear() {
+    if (this.nowMonth === "Jan") {
+      this.totalSeconds+=0;
+    } else if (this.nowMonth === "Feb") {
+      this.totalSeconds+=2678400;
+    } else if (this.nowMonth === "Mar") {
+      this.totalSeconds+=5097600;
+    } else if (this.nowMonth === "Apr") {
+      this.totalSeconds+=7776000;
+    } else if (this.nowMonth === "May") {
+      this.totalSeconds+=10368000;
+    } else if (this.nowMonth === "Jun") {
+      this.totalSeconds+=13046400;
+    } else if (this.nowMonth === "Jul") {
+      this.totalSeconds+=15638400;
+    } else if (this.nowMonth === "Aug") {
+      this.totalSeconds+=18316800;
+    } else if (this.nowMonth === "Sep") {
+      this.totalSeconds+=20995200;
+    } else if (this.nowMonth === "Oct") {
+      this.totalSeconds+=23587200;
+    } else if (this.nowMonth === "Nov") {
+      this.totalSeconds+=26265600;
+    } else if (this.nowMonth === "Dec") {
+      this.totalSeconds+=28857600;
+    }
+  }
+// works in console.  Implement properly and test
+
+  function secondsThisYear() {
+    totalSeconds+=(nowSeconds+nowMinutes+nowHours+nowDays);
+  }
+
+
+
+
   // RUN WHEN DETERMINING YEARS BETWEEN BIRTH DATE & PRESENT
-    const leapYear = function(year) {
+    function leapYear(year) {
       if ((year % 4 === 0) && (year % 100 !==0) || (year % 400 === 0)) {
         return true; //add 31622400 seconds
       } else {
@@ -29,34 +78,7 @@ export class AgeCalculator { // can't scope variables to class, so fix this shit
       }
     };
 
-    function monthsThisYear(nowMonth) {
-      if (nowMonth === "Jan") {
-        totalSeconds+=0;
-      } else if (nowMonth === "Feb") {
-        totalSeconds+=2678400;
-      } else if (nowMonth === "Mar") {
-        totalSeconds+=5097600;
-      } else if (nowMonth === "Apr") {
-        totalSeconds+=7776000;
-      } else if (nowMonth === "May") {
-        totalSeconds+=10368000;
-      } else if (nowMonth === "Jun") {
-        totalSeconds+=13046400;
-      } else if (nowMonth === "Jul") {
-        totalSeconds+=15638400;
-      } else if (nowMonth === "Aug") {
-        totalSeconds+=18316800;
-      } else if (nowMonth === "Sep") {
-        totalSeconds+=20995200;
-      } else if (nowMonth === "Oct") {
-        totalSeconds+=23587200;
-      } else if (nowMonth === "Nov") {
-        totalSeconds+=26265600;
-      } else if (nowMonth === "Dec") {
-        totalSeconds+=28857600;
-      }
-    }
-// works in console.  Implement properly and test
+
 
     function secondsThisMonth(); {
       let thisMonth = (nowDay+nowHours+nowMinutes+nowSeconds);
