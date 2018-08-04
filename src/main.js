@@ -37,9 +37,9 @@ export class AgeCalculator {
     function leapYear(year) {
       for each (var item in this.yearSpan) {
         if ((year % 4 === 0) && (year % 100 !==0) || (year % 400 === 0)) {
-        return true; //add 31622400 seconds
+        this.totalSeconds += 31622400; //return true?
       } else {
-        return false; //add 31536000 seconds
+        this.totalSeconds += 31536000;
       }
     }
   }
@@ -100,27 +100,12 @@ export class AgeCalculator {
         this.totalSeconds += (23587200 - this.birthMonthSeconds);
       } else if (this.birthMonth === "Mar") {
         this.totalSeconds += (26265600 - this.birthMonthSeconds);
-      } else if (this.birthMonth === "Feb") {
+      } else if (this.birthMonth === "Feb" && leapYear = true) {
         this.totalSeconds += (28857600 - this.birthMonthSeconds);
+      } else if (this.birthMonth === "Feb" && leapYear = false) {
+        this.totalSeconds += (28771200 - this.birthMonthSeconds);
       } else (this.birthMonth === "Jan") {
         this.totalSeconds += (31536000 - this.birthMonthSeconds);
       }
-  };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
 }

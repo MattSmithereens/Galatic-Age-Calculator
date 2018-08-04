@@ -1,0 +1,20 @@
+1 day = 86400 seconds
+1 hour = 3600 seconds
+1 minute = 60 seconds
+
+
+January - 31 days (2678400 seconds)
+February - 28 days in a common year and 29 days in leap years (2419200, 2505600)
+March - 31 days (2678400 seconds)
+April - 30 days (2592000 seconds)
+May - 31 days (2678400 seconds)
+June - 30 days (2592000 seconds)
+July - 31 days (2678400 seconds)
+August - 31 days (2678400 seconds)
+September - 30 days (2592000 seconds)
+October - 31 days (2678400 seconds)
+November - 30 days (2592000 seconds)
+December - 31 days (2678400 seconds)
+
+normal year 31536000 seconds
+leap year 31622400 seconds
