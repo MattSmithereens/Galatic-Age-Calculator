@@ -1,4 +1,4 @@
-export class AgeCalculator {
+export class AgeCalculator { // can't scope variables to class, so fix this shit
   let nowDate = Date();
   let nowString = nowDate.toString();
   let nowArray = nowString.split(" "); //split date string into elements
@@ -12,6 +12,13 @@ export class AgeCalculator {
   let nowSeconds = parseInt(splitTime[2]);
   let totalSeconds = 0;
   let yearSpan = [];
+// works in console.  inplement properly and test
+
+    function countYears(birthYear, nowYear) {
+      for (var i = birthYear+1; i <= nowYear-1; i += 1) {
+        leapYear(i);
+      }
+    }
 
   // RUN WHEN DETERMINING YEARS BETWEEN BIRTH DATE & PRESENT
     const leapYear = function(year) {
@@ -49,17 +56,14 @@ export class AgeCalculator {
         totalSeconds+=28857600;
       }
     }
+// works in console.  Implement properly and test
 
     function secondsThisMonth(); {
       let thisMonth = (nowDay+nowHours+nowMinutes+nowSeconds);
       totalSeconds += thisMonth;
     }
 
-//   function countYears(birthYear, nowYear) {
-//     for (var i = birthYear+1; i <= nowYear-1; i += 1) {
-//       leapYear(i);
-//     }
-//   }
+
 
 
 
