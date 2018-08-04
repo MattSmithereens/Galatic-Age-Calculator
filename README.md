@@ -13,7 +13,7 @@ This program does 3 related, but separate things:
 ## Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program takes in an age in years and converts that to seconds (1 year = 3.154e+7 seconds)**|  "1" | "31557600" |
+| **Program takes in an age in years and converts that to seconds based on Date(); (1 year = 3.154e+7 seconds)**|  "Aug 3, 2017" | "~31557600" |
 | **Program converts a pair of ages and determines how many seconds separate them**|  "1", "2" | "31557600" |
 | **Program Calculates a Terran age in Mercurian years**|  "1" | ".24"|
 | **Program Calculates a Terran age in Venusian years**|  "1" | ".62"|
