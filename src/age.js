@@ -1,6 +1,8 @@
 export class Person {
   constructor(birthTime) {
     this.birthTime = birthTime;
+    //this.lifeExpectancy = lifeExpectancy
+    // this.yearAge = yearAge;
   }
 
   getSecondsAge() {
@@ -20,8 +22,8 @@ export class Person {
   getMercurianYearsAge() {
     const birthTime = new Date(this.birthTime);
     const nowTime= new Date();
-    const MercurianAge = Math.floor((nowTime - birthTime)/365/24/60/60)*.24;
-    return MercurianAge;
+    const mercurianAge = Math.floor((nowTime - birthTime)/365/24/60/60)*.24;
+    return mercurianAge;
   }
 
   getVenusianYearsAge() {
@@ -30,5 +32,31 @@ export class Person {
     const VenusianAge = Math.floor((nowTime - birthTime)/365/24/60/60)*.62;
     return VenusianAge;
   }
+
+  getMartianYearsAge() {
+    const birthTime = new Date(this.birthTime);
+    const nowTime= new Date();
+    const martianAge = Math.floor((nowTime - birthTime)/365/24/60/60)*1.88;
+    return martianAge;
+  }
+
+  getJovianYearsAge() {
+    const birthTime = new Date(this.birthTime);
+    const nowTime= new Date();
+    const jovianAge = Math.floor((nowTime - birthTime)/365/24/60/60)*11.86;
+    return jovianAge;
+  }
+
+  shouldBeDead() {
+    const lifeExpectancy = 79;
+    const birthTime = new Date(terranAge);
+    const nowTime= new Date();
+    const yearsAge = Math.floor(nowTime - birthTime)/365/24/60/60;
+    if (yearsAge > lifeExpectancy) {
+      return true;
+    } else if (yearsAge <= lifeExpectancy) {
+      return false;
+    }
+  };
 
 }
