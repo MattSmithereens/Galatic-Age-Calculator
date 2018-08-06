@@ -15,4 +15,28 @@ import {Person} from '../src/age';
     expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
   });
 
+  it ('should determine Earth years age', function() {
+    let nowTime = new Date ();
+    let birthTime = new Date(newPerson.birthTime);
+    let expected = Math.floor(nowTime - birthTime)/365/24/60/60;
+    let actual = newPerson.getEarthYearsAge();
+    expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
+  });
+
+  it ('should determine Mercurian years age', function() {
+    let nowTime = new Date ();
+    let birthTime = new Date(newPerson.birthTime);
+    let expected = Math.floor((nowTime - birthTime)/365/24/60/60)*.24;
+    let actual = newPerson.getMercurianYearsAge();
+    expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
+  });
+
+  it ('should determine Venusian years age', function() {
+    let nowTime = new Date ();
+    let birthTime = new Date(newPerson.birthTime);
+    let expected = Math.floor((nowTime - birthTime)/365/24/60/60)*.62;
+    let actual = newPerson.getVenusianYearsAge();
+    expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
+  });
+
 });
