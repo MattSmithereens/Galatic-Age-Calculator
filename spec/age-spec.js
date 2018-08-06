@@ -4,11 +4,10 @@ import {Person} from '../src/age';
     let newPerson;
 
   beforeEach(function() {
-    newPerson = new Person("1975-10-23"); //42 years
+    newPerson = new Person("1975-10-23");
   });
 
-  // expect ~1.3x10e9 seconds for ~43 years
-  it ('should determine seconds age', function() {
+  it ('should determine seconds age: ~1.3x10e9 seconds for ~43 years', function() {
     let nowTime = new Date ();
     let birthDate = new Date(newPerson.birthDate);
     let expected = Math.floor(nowTime - birthDate) /1000;
@@ -16,8 +15,7 @@ import {Person} from '../src/age';
     expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
   });
 
-  // expect ~42.8 for someone born in 10/75 as of 08/18
-  it ('should determine Earth years age', function() {
+  it ('should determine Earth years age ~42.8 for someone born in 10/75 as of 08/18', function() {
     let nowTime = new Date ();
     let birthDate = new Date(newPerson.birthDate);
     let expected = Math.floor(nowTime - birthDate)/365/24/60/60/1000;
@@ -25,8 +23,7 @@ import {Person} from '../src/age';
     expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
   });
 
-  // expect ~175
-  it ('should determine Mercurian years age', function() {
+  it ('should determine Mercurian years age ~175', function() {
     let nowTime = new Date ();
     let birthDate = new Date(newPerson.birthDate);
     let expected = Math.floor((nowTime - birthDate)/365/24/60/60/1000)/.24;
@@ -34,8 +31,7 @@ import {Person} from '../src/age';
     expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
   });
 
-  // expect ~64
-  it ('should determine Venusian years age', function() {
+  it ('should determine Venusian years age ~64', function() {
     let nowTime = new Date ();
     let birthDate = new Date(newPerson.birthDate);
     let expected = Math.floor((nowTime - birthDate)/365/24/60/60/1000)/.62;
@@ -43,8 +39,7 @@ import {Person} from '../src/age';
     expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
   });
 
-  // expect ~22
-  it ('should determine Martian years age', function() {
+  it ('should determine Martian years age ~22', function() {
     let nowTime = new Date ();
     let birthDate = new Date(newPerson.birthDate);
     let expected = Math.floor((nowTime - birthDate)/365/24/60/60/1000)/1.88;
@@ -52,8 +47,7 @@ import {Person} from '../src/age';
     expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
   });
 
-  // expect ~3.6
-  it ('should determine Jovian years age', function() {
+  it ('should determine Jovian years age ~3.6', function() {
     let nowTime = new Date ();
     let birthDate = new Date(newPerson.birthDate);
     let expected = Math.floor((nowTime - birthDate)/365/24/60/60/1000)/11.86;
@@ -66,6 +60,12 @@ import {Person} from '../src/age';
     let notDead = newPerson.stillKicking();
     expect(notDead).toEqual(true);
   });
+
+  // it('should return Earth life expectancy', function() {
+  //   let birthDate = new Date(newPerson.birthDate);
+  //   let earthResult = newPerson.lifeExpectancy();
+  //   expect(earthResult).toEqual("We have to put up with you for ${Math.round(yearsLeft)} more Earth years.");
+  // });
 
 
 });
