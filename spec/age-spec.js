@@ -55,7 +55,7 @@ import {Person} from '../src/age';
     expect(Math.trunc(actual)).toEqual(Math.trunc(expected));
   });
 
-  it('should return return true if earth age > 78', function() {
+  it('should return notDead true if earth age < 78', function() {
     let birthDate = new Date(newPerson.birthDate);
     let notDead = newPerson.stillKicking();
     expect(notDead).toEqual(true);
