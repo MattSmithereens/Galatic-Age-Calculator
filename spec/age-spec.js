@@ -73,4 +73,21 @@ import {Person} from '../src/age';
     expect(Math.floor(actual)).toEqual(Math.floor(expected));
   });
 
+  it('should return the difference between a persons age and their expected death on venus', function() {
+    let actual = newPerson.venusLifeExpectancy();
+    let expected = newPerson.getVenusianYearsAge() - newPerson.lifeExpectancy/.62;
+    expect(Math.floor(actual)).toEqual(Math.floor(expected));
+  });
+
+  it('should return the difference between a persons age and their expected death on mars', function() {
+    let actual = newPerson.marsLifeExpectancy();
+    let expected = newPerson.getMartianYearsAge() - newPerson.lifeExpectancy/1.88;
+    expect(Math.floor(actual)).toEqual(Math.floor(expected));
+  });
+
+  it('should return the difference between a persons age and their expected death on jupiter', function() {
+    let actual = newPerson.jupiterLifeExpectancy();
+    let expected = newPerson.getJovianYearsAge() - newPerson.lifeExpectancy/11.86;
+    expect(Math.floor(actual)).toEqual(Math.floor(expected));
+  });
 });
