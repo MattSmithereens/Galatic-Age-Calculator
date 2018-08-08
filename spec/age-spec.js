@@ -61,11 +61,16 @@ import {Person} from '../src/age';
     expect(notDead).toEqual(true);
   });
 
-  // it('should return Earth life expectancy', function() {
-  //   let birthDate = new Date(newPerson.birthDate);
-  //   let earthResult = newPerson.lifeExpectancy();
-  //   expect(earthResult).toEqual("We have to put up with you for ${Math.round(yearsLeft)} more Earth years.");
-  // });
+  it('should return the difference between a persons age and their expected death on earth', function() {
+    let actual = newPerson.earthLifeExpectancy();
+    let expected = newPerson.getEarthYearsAge() - newPerson.lifeExpectancy;
+    expect(Math.floor(actual)).toEqual(Math.floor(expected));
+  });
 
+  it('should return the difference between a persons age and their expected death on mercury', function() {
+    let actual = newPerson.mercuryLifeExpectancy();
+    let expected = newPerson.getMercurianYearsAge() - newPerson.lifeExpectancy/.24;
+    expect(Math.floor(actual)).toEqual(Math.floor(expected));
+  });
 
 });
