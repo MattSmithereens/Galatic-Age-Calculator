@@ -63,31 +63,31 @@ import {Person} from '../src/age';
 
   it('should return the difference between a persons age and their expected death on earth', function() {
     let actual = newPerson.earthLifeExpectancy();
-    let expected = newPerson.getEarthYearsAge() - newPerson.lifeExpectancy;
+    let expected = newPerson.lifeExpectancy - newPerson.getEarthYearsAge();
     expect(Math.floor(actual)).toEqual(Math.floor(expected));
   });
 
   it('should return the difference between a persons age and their expected death on mercury', function() {
     let actual = newPerson.mercuryLifeExpectancy();
-    let expected = newPerson.getMercurianYearsAge() - newPerson.lifeExpectancy/.24;
+    let expected = (newPerson.lifeExpectancy/.24) - newPerson.getMercurianYearsAge();
     expect(Math.floor(actual)).toEqual(Math.floor(expected));
   });
 
   it('should return the difference between a persons age and their expected death on venus', function() {
     let actual = newPerson.venusLifeExpectancy();
-    let expected = newPerson.getVenusianYearsAge() - newPerson.lifeExpectancy/.62;
+    let expected = (newPerson.lifeExpectancy/.62) - newPerson.getVenusianYearsAge();
     expect(Math.floor(actual)).toEqual(Math.floor(expected));
   });
 
   it('should return the difference between a persons age and their expected death on mars', function() {
     let actual = newPerson.marsLifeExpectancy();
-    let expected = newPerson.getMartianYearsAge() - newPerson.lifeExpectancy/1.88;
+    let expected = (newPerson.lifeExpectancy/1.88) - newPerson.getMartianYearsAge();
     expect(Math.floor(actual)).toEqual(Math.floor(expected));
   });
 
   it('should return the difference between a persons age and their expected death on jupiter', function() {
     let actual = newPerson.jupiterLifeExpectancy();
-    let expected = newPerson.getJovianYearsAge() - newPerson.lifeExpectancy/11.86;
+    let expected = (newPerson.lifeExpectancy/11.86) - newPerson.getJovianYearsAge();
     expect(Math.floor(actual)).toEqual(Math.floor(expected));
   });
 });

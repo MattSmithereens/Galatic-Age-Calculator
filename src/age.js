@@ -59,7 +59,7 @@ export class Person {
   earthLifeExpectancy() {
     const age = this.getEarthYearsAge();
     let yearsLeft = this.lifeExpectancy;
-    if (yearsLeft > age) {
+    if (yearsLeft <= age) {
       return (age - yearsLeft);
     } else {
       return (yearsLeft - age);
@@ -69,7 +69,7 @@ export class Person {
   mercuryLifeExpectancy() {
     const age = this.getMercurianYearsAge();
     let yearsLeft = this.lifeExpectancy/this.mercuryFactor;
-    if (yearsLeft > age) {
+    if (yearsLeft <= age) {
       return (age - yearsLeft);
     } else {
       return (yearsLeft - age);
@@ -79,7 +79,7 @@ export class Person {
   venusLifeExpectancy() {
     const age = this.getVenusianYearsAge();
     let yearsLeft = this.lifeExpectancy/this.venusianFactor;
-    if (yearsLeft > age) {
+    if (yearsLeft <= age) {
       return (age - yearsLeft);
     } else {
       return (yearsLeft - age);
@@ -89,7 +89,7 @@ export class Person {
   marsLifeExpectancy() {
     const age = this.getMartianYearsAge();
     let yearsLeft = this.lifeExpectancy/this.marsFactor;
-    if (yearsLeft > age) {
+    if (yearsLeft <= age) {
       return (age - yearsLeft);
     } else {
       return (yearsLeft - age);
@@ -99,7 +99,7 @@ export class Person {
   jupiterLifeExpectancy() {
     const age = this.getJovianYearsAge();
     let yearsLeft = this.lifeExpectancy/this.jovianFactor;
-    if (yearsLeft > age) {
+    if (yearsLeft <= age) {
       return (age - yearsLeft);
     } else {
       return (yearsLeft - age);
